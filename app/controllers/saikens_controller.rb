@@ -4,7 +4,8 @@ class SaikensController < ApplicationController
   # GET /saikens
   # GET /saikens.json
   def index
-    @saikens = Saiken.all
+    @saikens = Saiken.where(['customer_id = ?', params[:customer_id]]).all
+
 
     respond_to do |format|
       format.html # index.html.erb
