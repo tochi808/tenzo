@@ -30,6 +30,11 @@
     <%= f.radio_button :payment_type, 1  %>　<%= Saiken.payment_str(1) %>
   </div>
 
+   <div class="field">
+    <%= f.label :first_payment_gaku %><br />
+    <%= f.number_field :first_payment_gaku %>
+  </div>
+
   <div class="actions">
     <%= f.submit %>
   </div>

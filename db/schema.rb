@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130715043737) do
+ActiveRecord::Schema.define(:version => 20130715050413) do
 
   create_table "creditors", :force => true do |t|
     t.string   "name"
@@ -30,9 +30,10 @@ ActiveRecord::Schema.define(:version => 20130715043737) do
     t.integer  "customer_id"
     t.integer  "creditor_id"
     t.integer  "wakai_gaku"
-    t.datetime "created_at",                  :null => false
-    t.datetime "updated_at",                  :null => false
-    t.integer  "payment_type", :default => 0
+    t.datetime "created_at",                        :null => false
+    t.datetime "updated_at",                        :null => false
+    t.integer  "payment_type",       :default => 0
+    t.integer  "first_payment_gaku", :default => 0
   end
 
 end

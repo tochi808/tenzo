@@ -3,7 +3,7 @@ class Saiken < ActiveRecord::Base
   IKKATSU = "一括払い"
   BUNKATSU = "分割払い"
 
-  attr_accessible :creditor_id, :customer_id, :wakai_gaku, :payment_type
+  attr_accessible :creditor_id, :customer_id, :wakai_gaku, :payment_type, :first_payment_gaku
 
   belongs_to :creditor
   belongs_to :customer
