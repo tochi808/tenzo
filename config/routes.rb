@@ -1,4 +1,7 @@
 Tenzo::Application.routes.draw do
+  resources :saikens
+
+
   resources :creditors
 
 

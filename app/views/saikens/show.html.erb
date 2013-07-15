@@ -1,0 +1,20 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Customer:</b>
+  <%= @saiken.customer_id %>
+</p>
+
+<p>
+  <b>Creditor:</b>
+  <%= @saiken.creditor_id %>
+</p>
+
+<p>
+  <b>Wakai gaku:</b>
+  <%= @saiken.wakai_gaku %>
+</p>
+
+
+<%= link_to 'Edit', edit_saiken_path(@saiken) %> |
+<%= link_to 'Back', saikens_path %>

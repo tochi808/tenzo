@@ -1,0 +1,29 @@
+<%= form_for(@saiken) do |f| %>
+  <% if @saiken.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@saiken.errors.count, "error") %> prohibited this saiken from being saved:</h2>
+
+      <ul>
+      <% @saiken.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :customer_id %><br />
+    <%= f.number_field :customer_id %>
+  </div>
+  <div class="field">
+    <%= f.label :creditor_id %><br />
+    <%= f.number_field :creditor_id %>
+  </div>
+  <div class="field">
+    <%= f.label :wakai_gaku %><br />
+    <%= f.number_field :wakai_gaku %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

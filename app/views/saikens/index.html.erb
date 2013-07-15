@@ -1,0 +1,27 @@
+<h1>Listing saikens</h1>
+
+<table>
+  <tr>
+    <th>Customer</th>
+    <th>Creditor</th>
+    <th>Wakai gaku</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @saikens.each do |saiken| %>
+  <tr>
+    <td><%= saiken.customer_id %></td>
+    <td><%= saiken.creditor_id %></td>
+    <td><%= saiken.wakai_gaku %></td>
+    <td><%= link_to 'Show', saiken %></td>
+    <td><%= link_to 'Edit', edit_saiken_path(saiken) %></td>
+    <td><%= link_to 'Destroy', saiken, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Saiken', new_saiken_path %>
