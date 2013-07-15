@@ -1,0 +1,15 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Name:</b>
+  <%= @creditor.name %>
+</p>
+
+<p>
+  <b>Simple name:</b>
+  <%= @creditor.simple_name %>
+</p>
+
+
+<%= link_to 'Edit', edit_creditor_path(@creditor) %> |
+<%= link_to 'Back', creditors_path %>
