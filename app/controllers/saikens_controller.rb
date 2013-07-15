@@ -1,3 +1,5 @@
+#encoding: utf-8
+
 class SaikensController < ApplicationController
   # GET /saikens
   # GET /saikens.json
@@ -25,10 +27,11 @@ class SaikensController < ApplicationController
   # GET /saikens/new.json
   def new
     @saiken = Saiken.new
+    @customers = Customer.all
+    @creditors = Creditor.all
 
     respond_to do |format|
       format.html # new.html.erb
-      format.json { render json: @saiken }
     end
   end
 
@@ -45,10 +48,13 @@ class SaikensController < ApplicationController
     respond_to do |format|
       if @saiken.save
         format.html { redirect_to @saiken, notice: 'Saiken was successfully created.' }
-        format.json { render json: @saiken, status: :created, location: @saiken }
       else
-        format.html { render action: "new" }
-        format.json { render json: @saiken.errors, status: :unprocessable_entity }
+        format.html do
+          @customers = Customer.all
+          @creditors = Creditor.all
+
+          render action: "new" 
+        end
       end
     end
   end
