@@ -6,6 +6,7 @@
     <th></th>
     <th></th>
     <th></th>
+    <th></th>
   </tr>
 
 <% @customers.each do |customer| %>
@@ -14,6 +15,7 @@
     <td><%= link_to 'Show', customer %></td>
     <td><%= link_to 'Edit', edit_customer_path(customer) %></td>
     <td><%= link_to 'Destroy', customer, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    <td><%=link_to '新規債権', new_customer_saiken_url(customer) %></td>
   </tr>
 <% end %>
 </table>

@@ -35,6 +35,7 @@ class CreditorsController < ApplicationController
   # GET /creditors/1/edit
   def edit
     @creditor = Creditor.find(params[:id])
+    @customer = Customer.find(params[:customer_id])
   end
 
   # POST /creditors

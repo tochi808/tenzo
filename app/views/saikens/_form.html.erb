@@ -1,4 +1,4 @@
-<%= form_for(@saiken) do |f| %>
+<%= form_for([@customer, @saiken]) do |f| %>
   <% if @saiken.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@saiken.errors.count, "error") %> prohibited this saiken from being saved:</h2>
@@ -13,7 +13,7 @@
 
   <div class="field">
     <%= f.label :customer_id %><br />
-    <%= f.select :customer_id, @customers.collect{|customer| [customer.name, customer.id]} %>
+    <%= @customer.name %>
   </div>
   <div class="field">
     <%= f.label :creditor_id %><br />

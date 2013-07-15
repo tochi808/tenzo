@@ -27,7 +27,7 @@ class SaikensController < ApplicationController
   # GET /saikens/new.json
   def new
     @saiken = Saiken.new
-    @customers = Customer.all
+    @customer = Customer.find(params[:customer_id])
     @creditors = Creditor.all
 
     respond_to do |format|
@@ -44,6 +44,7 @@ class SaikensController < ApplicationController
   # POST /saikens.json
   def create
     @saiken = Saiken.new(params[:saiken])
+    @saiken.customer = Customer.find(params[:customer_id])
 
     respond_to do |format|
       if @saiken.save

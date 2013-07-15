@@ -1,11 +1,13 @@
 Tenzo::Application.routes.draw do
-  resources :saikens
+  resources :saikens 
 
 
   resources :creditors
 
 
-  resources :customers
+  resources :customers do
+    resources :saikens
+  end
 
 
   # The priority is based upon order of creation:
