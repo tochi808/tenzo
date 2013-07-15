@@ -23,6 +23,13 @@
     <%= f.label :wakai_gaku %><br />
     <%= f.number_field :wakai_gaku %>
   </div>
+
+  <div class="field">
+    <%= f.label :payment_type %><br />
+    <%= f.radio_button :payment_type, 0  %> <%= Saiken.payment_str(0) %>
+    <%= f.radio_button :payment_type, 1  %>　<%= Saiken.payment_str(1) %>
+  </div>
+
   <div class="actions">
     <%= f.submit %>
   </div>

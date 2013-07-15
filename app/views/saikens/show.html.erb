@@ -15,6 +15,10 @@
   <%= @saiken.wakai_gaku %>
 </p>
 
+<p>
+  <b>Payment Type:</b>
+  <%= Saiken.payment_str(@saiken.payment_type) %>
+</p>
 
 <%= link_to 'Edit', edit_customer_saiken_path(@saiken.customer,@saiken) %> |
 <%= link_to 'Back', customer_saikens_url(@saiken.customer) %>
