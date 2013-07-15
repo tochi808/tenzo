@@ -13,11 +13,11 @@
 
   <div class="field">
     <%= f.label :customer_id %><br />
-    <%= f.number_field :customer_id %>
+    <%= f.select :customer_id, @customers.collect{|customer| [customer.name, customer.id]} %>
   </div>
   <div class="field">
     <%= f.label :creditor_id %><br />
-    <%= f.number_field :creditor_id %>
+    <%= f.select :creditor_id, @creditors.collect{|creditor|[creditor.name, creditor.id]} %>
   </div>
   <div class="field">
     <%= f.label :wakai_gaku %><br />

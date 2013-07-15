@@ -12,8 +12,8 @@
 
 <% @saikens.each do |saiken| %>
   <tr>
-    <td><%= saiken.customer_id %></td>
-    <td><%= saiken.creditor_id %></td>
+    <td><%= saiken.customer.name %></td>
+    <td><%= saiken.creditor.simple_name %></td>
     <td><%= saiken.wakai_gaku %></td>
     <td><%= link_to 'Show', saiken %></td>
     <td><%= link_to 'Edit', edit_saiken_path(saiken) %></td>
