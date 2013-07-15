@@ -19,6 +19,7 @@ class SaikensController < ApplicationController
   def show
     @saiken = Saiken.find(params[:id])
 
+
     respond_to do |format|
       format.html # show.html.erb
       format.json { render json: @saiken }
@@ -70,10 +71,11 @@ class SaikensController < ApplicationController
   # PUT /saikens/1.json
   def update
     @saiken = Saiken.find(params[:id])
+    @customer = Customer.find(params[:customer_id])
 
     respond_to do |format|
       if @saiken.update_attributes(params[:saiken])
-        format.html { redirect_to @saiken, notice: 'Saiken was successfully updated.' }
+        format.html { redirect_to customer_saiken_url(@customer, @saiken), notice: 'Saiken was successfully updated.' }
       else
         format.html do 
           @customer = Customer.find(params[:customer_id])

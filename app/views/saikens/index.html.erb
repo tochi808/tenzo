@@ -15,7 +15,7 @@
     <td><%= saiken.customer.name %></td>
     <td><%= saiken.creditor.simple_name %></td>
     <td><%= saiken.wakai_gaku %></td>
-    <td><%= link_to 'Show', saiken %></td>
+    <td><%= link_to 'Show', customer_saiken_url(@customer, saiken) %></td>
     <td><%= link_to 'Edit', edit_customer_saiken_path(@customer, saiken) %></td>
     <td><%= link_to 'Destroy', customer_saiken_url(@customer, saiken), method: :delete, data: { confirm: 'Are you sure?' } %></td>
   </tr>
