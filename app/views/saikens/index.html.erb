@@ -1,12 +1,10 @@
 <h1>Listing saikens</h1>
 
-<table>
+<table class="saiken_table table">
   <tr>
     <th>Customer</th>
     <th>Creditor</th>
     <th>Wakai gaku</th>
-    <th></th>
-    <th></th>
     <th></th>
   </tr>
 
@@ -15,9 +13,26 @@
     <td><%= saiken.customer.name %></td>
     <td><%= saiken.creditor.simple_name %></td>
     <td><%= saiken.wakai_gaku %></td>
-    <td><%= link_to 'Show', customer_saiken_url(@customer, saiken) %></td>
-    <td><%= link_to 'Edit', edit_customer_saiken_path(@customer, saiken) %></td>
-    <td><%= link_to 'Destroy', customer_saiken_url(@customer, saiken), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    <td>
+        <%= link_to customer_saiken_url(@customer, saiken) do %>
+          <button type="button" class="btn btn-info saiken_show">
+            <span class="glyphicon glyphicon-eye-open"></span>
+          </button>
+        <% end %>
+          
+        <%= link_to edit_customer_saiken_path(@customer, saiken) do %>
+          <button type="button" class="btn btn-info saiken_edit">
+            <span class="glyphicon glyphicon-pencil"></span>
+          </button>
+        <% end %>
+      
+        <%= link_to customer_saiken_url(@customer, saiken), method: :delete, data: { confirm: 'Are you sure?' } do %>
+          <button type="button" class="btn btn-danger saiken_destroy">
+            <span class="glyphicon glyphicon-trash"></span>
+          </button>
+        <% end %>
+
+    </td>
   </tr>
 <% end %>
 </table>

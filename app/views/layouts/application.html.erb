@@ -8,7 +8,16 @@
 </head>
 <body>
 
-<%= yield %>
+<div class="navbar">
+  <span class="navbar-brand" >Tenzo</span>
+  <ul class="nav navbar-nav">
+    <li ><%= link_to '顧客一覧', customers_url %></li>
+  </ul>
+</div>
+
+<div class="container">
+  <%= yield %>
+</div>
 
 </body>
 </html>
